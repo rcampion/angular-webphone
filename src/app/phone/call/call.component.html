@@ -1,0 +1,170 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+	<mat-card fxFlex="90%" fxFlex.xs="100%"> 
+	
+	<mat-card-title></mat-card-title>
+
+    <form [formGroup]="callForm" autocomplete="off" novalidate (ngSubmit)="saveCallSettings(callForm.value)" fxLayout="column wrap"
+      fxLayoutAlign="center center" fxLayoutGap="5px">
+      
+		<mat-card-content>
+		
+		
+<!--  		  
+<p-panel>
+-->
+
+<section>
+<div class="container">
+
+        <div>
+        
+            <label style="width: 100%;" align="center" id="txtRegStatus">{{txtRegStatus}}</label>          
+                
+            <label style="width: 100%;" align="center" id="txtCallStatus">{{txtCallStatus}}</label>
+                
+                <h2>
+                    Call control
+                </h2>
+                <br />
+                <table style='width: 100%;'>
+                    <tr>
+                        <td style="white-space:nowrap;">
+                            <mat-form-field>  
+                            	<input matInput type="text" style="width: 100%; height:100%;" id="txtPhoneNumber" formControlName="txtPhoneNumber" placeholder="Enter phone number to call" />
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="right">
+                            <div class="btn-toolbar" style="margin: 0; vertical-align:middle">
+                                <div id="divBtnCallGroup" class="btn-group">
+                                	<button class="btn btn-success m-1" (click)="sipCall('call-audio')">Audio Call</button>
+&nbsp;&nbsp;
+									<button class="btn btn-success m-1" (click)="sipHangUp()">Hang Up</button>
+                                </div>                          
+                            </div>
+                        </td>
+                    </tr>
+                                    
+<!--             
+                    <tr>
+                        <td id="tdVideo" class='tab-video'>
+                            <div id="divVideo" class='div-video'>
+                                <div id="divVideoRemote" style='position:relative; border:1px solid #009; height:100%; width:100%; z-index: auto; opacity: 1'>
+                                    <video class="video" width="100%" height="100%" id="video_remote" autoplay="autoplay" style="opacity: 0;
+                                        background-color: #000000; -webkit-transition-property: opacity; -webkit-transition-duration: 2s;"></video>
+                                </div>
+
+                                <div id="divVideoLocalWrapper" style="margin-left: 0px; border:0px solid #009; z-index: 1000">
+                                    <iframe class="previewvideo" style="border:0px solid #009; z-index: 1000"> </iframe>
+                                    <div id="divVideoLocal" class="previewvideo" style=' border:0px solid #009; z-index: 1000'>
+                                        <video class="video" width="100%" height="100%" id="video_local" autoplay="autoplay" muted="true" style="opacity: 0;
+                                            background-color: #000000; -webkit-transition-property: opacity;
+                                            -webkit-transition-duration: 2s;"></video>
+                                    </div>
+                                </div>
+                                <div id="divScreencastLocalWrapper" style="margin-left: 90px; border:0px solid #009; z-index: 1000">
+                                    <iframe class="previewvideo" style="border:0px solid #009; z-index: 1000"> </iframe>
+                                    <div id="divScreencastLocal" class="previewvideo" style=' border:0px solid #009; z-index: 1000'>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align='center'>
+                            <div id='divCallOptions' class='call-options' style='opacity: 0; margin-top: 0px'>
+                                <input type="button" class="btn" style="" id="btnFullScreen" value="FullScreen" disabled onclick='toggleFullScreen();' /> &nbsp;
+                                <input type="button" class="btn" style="" id="btnMute" value="Mute" onclick='sipToggleMute();' /> &nbsp;
+                                <input type="button" class="btn" style="" id="btnHoldResume" value="Hold" onclick='sipToggleHoldResume();' /> &nbsp;
+                                <input type="button" class="btn" style="" id="btnTransfer" value="Transfer" onclick='sipTransfer();' /> &nbsp;
+                                <input type="button" class="btn" style="" id="btnKeyPad" value="KeyPad" onclick='openKeyPad();' />
+                            </div>
+                        </td>
+                    </tr>
+-->                  
+                    
+                </table>
+                
+  <p>
+    When the call is established, the remote audio is added to the following HTML5 audio element...
+  </p>
+  <audio id="remoteAudio" controls>
+    <p>Your browser doesn't support HTML5 audio.</p>
+  </audio>
+
+  <p>
+    While the call is established, DTMF may be sent using the following "keypad"...
+  </p>
+  <div class="dtmf">DTMF sent: <span id="dtmf"></span></div>
+  <div>
+    <div>
+      <button class="keypad" disabled>1</button>
+      <button class="keypad" disabled>2</button>
+      <button class="keypad" disabled>3</button>
+    </div>
+    <div>
+      <button class="keypad" disabled>4</button>
+      <button class="keypad" disabled>5</button>
+      <button class="keypad" disabled>6</button>
+    </div>
+    <div>
+      <button class="keypad" disabled>7</button>
+      <button class="keypad" disabled>8</button>
+      <button class="keypad" disabled>9</button>
+    </div>
+    <div>
+      <button class="keypad" disabled>*</button>
+      <button class="keypad" disabled>0</button>
+      <button class="keypad" disabled>#</button>
+    </div>
+  </div>
+
+  <p>
+    While the call is established, the session may placed on hold or muted...
+  </p>
+  <div>
+    <input type="checkbox" id="hold" name="hold" disabled>
+    <label for="hold">Hold</label>
+  </div>
+  <div>
+    <input type="checkbox" id="mute" name="mute" disabled>
+    <label for="mute">Mute</label>
+  </div>
+  
+</div>
+
+<!--          
+</p-panel>
+-->
+
+	</div>
+	
+</section>
+	
+</mat-card-content>
+
+      <mat-card-actions>
+                    
+        <button mat-raised-button color="primary" class="btn btn-success m-1" (click)="sipRegister()">LogIn</button>
+		<button mat-raised-button color="primary" class="btn btn-danger m-1" (click)="sipUnRegister()">LogOut</button>
+                 
+        <button mat-raised-button color="primary" class="btn btn-success m-1" [disabled]="!callForm.valid">Save</button>
+		<button mat-raised-button color="primary" class="btn btn-success m-1" (click)="loadDefaults()">Defaults</button>		
+
+      </mat-card-actions>
+
+    </form>
+	</mat-card>
+	
+
+	
+</section>
+
+<audio id="ringtone" loop src="assets/sounds/ringtone.wav"> </audio>
+<audio id="ringbacktone" loop src="assets/sounds/ringbacktone.wav"> </audio>
+<audio id="dtmfTone" src="assets/sounds/dtmf.wav"> </audio>
+
+
+
+

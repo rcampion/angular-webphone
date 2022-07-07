@@ -1,0 +1,51 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+/* Styles for tab labels */
+
+/* Removes the bottom border below the tabs */
+.mat-tab-header {
+  border-bottom: none;
+  /** Hack to hide the border between .mat-tab-body-wrapper and the active tab */
+  transform: translateY(1px);
+  z-index: 1000;
+}
+
+// Styling of tabs in the top banner (on the right side) of a coordinet-component
+.mat-tab-list {
+
+  // Remove underline
+  mat-ink-bar.mat-ink-bar {
+    display: none;
+  }
+
+  // Tabs with rounded corners.
+  .mat-tab-labels {
+    color: black; // TODO: theme color
+
+    .mat-tab-label {
+      height: 72px;
+      padding: 0 48px;
+      border-radius: 10px 10px 0px 0px;
+      background-color: #F2F8FF;
+      color: black;
+      border: 1px solid #D0DCEA;
+      font-weight: 600;
+
+      &.mat-tab-label-active {
+        border-bottom: none;
+        min-width: 160px !important;
+        background-color: #D6ECEC; // TODO: theme color
+        color: black; // TODO: theme color
+        opacity: 1;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+

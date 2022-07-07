@@ -1,0 +1,128 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+	<mat-card fxFlex="90%" fxFlex.xs="100%"> 
+	
+	<mat-card-title></mat-card-title>
+
+    <form [formGroup]="settingsForm" autocomplete="off" novalidate (ngSubmit)="saveCallSettings(settingsForm.value)" fxLayout="column wrap"
+      fxLayoutAlign="center center" fxLayoutGap="10px">
+      
+		<mat-card-content>
+		
+		
+<!--  		  
+<p-panel>
+-->
+
+<section>
+<div class="container">
+        <div>
+            
+            <h2>Registration</h2>
+            <br />
+            <table style='width: 100%'>
+                <tr>
+                    <td>
+                        <label style="height: 100%">Display Name:</label>
+                    </td>
+                    <td>
+                    	<mat-form-field>
+                    	<input matInput type="text" placeholder="Display Name" formControlName="txtDisplayName" id="txtDisplayName">
+                    	</mat-form-field> 
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label style="height: 100%">Private Identity:</label>
+                    </td>
+                    <td>
+                    	<mat-form-field>
+                    	<input matInput type="text" placeholder="Private Identity" formControlName="txtPrivateIdentity" id="txtPrivateIdentity">
+                    	</mat-form-field> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label style="height: 100%">Public Identity:</label>
+                    </td>
+                    <td>
+                    	<mat-form-field>
+                    	<input matInput type="text" placeholder="Public Identity" formControlName="txtPublicIdentity" id="txtPublicIdentity">
+                    	</mat-form-field> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label style="height: 100%">Password:</label>
+                    </td>
+                    <td>
+                    	<mat-form-field>
+                    	<input matInput type="password" placeholder="Password" formControlName="txtPassword" id="txtPassword">
+                    	</mat-form-field> 
+                    </td>
+                </tr>
+                
+<!--  
+                <tr>
+                    <td>
+                        <label style="height: 100%">Realm:</label>
+                    </td>
+                    <td>
+                    	<mat-form-field>
+                    	<input matInput type="text" placeholder="Realm" formControlName="txtRealm" id="txtRealm">
+                    	</mat-form-field> 
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label style="height: 100%">WebSocket Server URL<sup><a href="#aWebSocketServerURL">[2]</a></sup>:</label>
+                    </td>
+                    <td>
+                    	<mat-form-field>
+                    	<input matInput type="text" placeholder="e.g. ws://sipml5.org:5062" formControlName="txtWebsocketServerUrl" id="txtWebsocketServerUrl">
+                    	</mat-form-field> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label style="height: 100%">SIP outbound Proxy URL<sup><a href="#aSIPOutboundProxyURL">[3]</a></sup>:</label>
+                    </td>
+                    <td>
+                   	<mat-form-field>                    
+                        <input matInput type="text" style="width: 100%; height: 100%" formControlName="txtSIPOutboundProxyUrl" id="txtSIPOutboundProxyUrl" value="" placeholder="e.g. udp://sipml5.org:5060" />
+                    </mat-form-field>
+                    </td>
+                </tr>
+                
+-->                                            
+            </table>
+        </div>
+<!--  
+</p-panel>
+-->
+<br>
+
+<!--          
+</p-panel>
+-->
+
+	</div>
+	
+</section>
+	
+</mat-card-content>
+
+      <mat-card-actions>
+
+        <button mat-raised-button color="primary" class="btn btn-success m-1" [disabled]="!settingsForm.valid">Save</button>
+		<button mat-raised-button color="primary" class="btn btn-success m-1" (click)="loadDefaults()">Defaults</button>		
+
+      </mat-card-actions>
+
+    </form>
+	</mat-card>
+		
+</section>
